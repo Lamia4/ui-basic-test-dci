@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .item
+        {
+            background: #CCFFCC;
+            padding: 10px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+        }
+        .item h3
+        {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Fetch beispiel</h1>
+
+    <h2>Posts</h2>
+
+    <ul id="posts"></ul>
+
+    <script>
+        const postsElement = document.getElementById("posts");
+        const url = 'https://jsonplaceholder.typicode.com/posts';
+
+        fetch(url).then((response) =>
+        {
+            // Wir wandeln die eingetroffenene daten in json um und geben sie weiter
+            return response.json();
+        }).then((jsonData) =>
+        {
+            // Jetzt wo wir die json daten haben, können wir mit ihnen arbeiten
+            jsonData.map(post =>
+            {
+                console.log(post);
+                // Wir erstellen eine LI, eine H3 und ein P element
+                const newListItem = document.createElement("LI");
+                newListItem.classList.add("item");
+
+                const newTitleElement = document.createElement("H3");
+                const newBodyElement = document.createElement("P");
+
+                // Wir befüllen die elemente
+                newTitleElement.innerText = post.id + " - " + post.title;
+                newBodyElement.innerText = post.body;
+
+                // wir fügen alles zusammen und der liste hinzu
+                newListItem.append(newTitleElement, newBodyElement);
+                postsElement.append(newListItem);
+            });
+            
+        }).catch((error) =>
+        {
+            postsElement.innerText = "Nicht gefunden";
+            console.log(error);
+        });
+    </script>
+
+</body>
+</html>

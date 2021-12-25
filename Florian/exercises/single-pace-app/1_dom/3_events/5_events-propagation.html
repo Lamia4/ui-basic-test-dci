@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Event Propagation</h1>
+
+    <h2>Wie funktionieren Events?</h2>
+
+    <i>Wir haben ein element das wir anklicken wollen zum beispiel ein LI element</i>
+
+    <ul class="liste">
+        <li id="beispiel">Ein Beispiel</li>
+    </ul>
+
+    <script>
+        // Wir holen uns das element...
+        const beispielElement = document.querySelector('#beispiel');
+
+        // ... und fügen einen eventlistenerr hinzu, der darauf wartet das event auszuführen wenn er gerufen wird.
+        // Beim abfeuern des events, übergeben wir einige informationen, die zum beispiel das angeklickte element und dessen id.
+        beispielElement.addEventListener('click', (event) =>
+        {
+            // Wenn wir auf das element kilicken, feuern wir das event ab.
+            console.log(event.target.id);
+        });
+    </script>
+
+    <p>
+        In dem beispiel oben, wird wenn die seite geladen ist, als erstes das element mit der id "beispiel" gesucht, dann wird der event-listener für die aktion "click" darauf eingestellt, und dann wird, wenn ein klick passiert, die funktion ausgeführt.
+    </p>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box
+        {
+            display: inline-block;
+            background: red;
+            width: 150px;
+            height: 150px;
+            margin: 20px;
+            text-align: center;
+            line-height: 150px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Random Color Generator</h1>
+
+    <div id="colorBoxList">
+    </div>
+
+    <input type="text" id="colorInput">
+    <button id="colorButton">Add Colors</button>
+    
+    <script>
+        const colorBoxList = document.getElementById("colorBoxList");
+        const colorInput = document.getElementById("colorInput");
+        const colorButton = document.getElementById("colorButton");
+
+        // 1. Create a function to generate a random color HEX code
+        function colorGenerator()
+        {
+            // #0000F9
+            const hexLetters = "0123456789ABCDEF";
+            let randomColor = "#";
+
+            for (let i = 0; i < 6; i++)
+            {
+                randomColor += hexLetters[Math.floor(Math.random() * 16)];
+            }
+
+            return randomColor;
+        }
+
+        // 2. Create a function to add a new color item to the list, passing the color code as argument
+        function addNewColor(color)
+        {
+            const newColorElement = document.createElement("span");
+            newColorElement.classList.add("box");
+
+            newColorElement.style.backgroundColor = color;
+            newColorElement.innerText = color;
+
+            createColorRemoveIcon(newColorElement);
+
+            colorBoxList.append(newColorElement);
+        }
+
+        function createColorRemoveIcon(parent)
+        {
+            const newRemoveIcon = document.createElement("button");
+            newRemoveIcon.classList.add("removeIcon");
+            newRemoveIcon.innerText = "X";
+
+            newRemoveIcon.style.float = "right";
+
+            // 5. Register the event handler to catch the event and attach the handler (4.).
+            newRemoveIcon.onclick = (event) => removeColor(parent);
+
+            parent.append(newRemoveIcon);
+        }
+
+        // 8. Register the submit event and attach the handler (7.)
+        colorButton.onclick = (event) => 
+        {
+            const colorAmount = parseInt(colorInput.value) || 1;
+
+            createColorSet(colorAmount);
+        };
+
+        // 7. Create a function to handle the submit of the form for adding more colors, which generates the needed amount of random hex colors and adds them to the list.
+        function createColorSet(amount)
+        {
+            for (let i = 0; i < amount; i++)
+            {
+                addNewColor(colorGenerator());
+            }
+        }
+        
+        // 4. Create a function to handle the removing of an item, passing the event as argument.
+        function removeColor(parent)
+        {
+            // 6. Test the removal by clicking on existing color items.
+            parent.remove();
+        }
+
+        // 9. Create a function init() that is called on load and generates 3 color elements
+        function init()
+        {
+            addNewColor(colorGenerator());
+            addNewColor(colorGenerator());
+            addNewColor(colorGenerator());
+        }
+
+        init();
+    </script>
+
+</body>
+</html>

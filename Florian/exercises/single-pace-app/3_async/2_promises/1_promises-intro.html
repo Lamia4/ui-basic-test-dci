@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /**
+         * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+         */
+
+        /**
+         * Eine Promise kann 3 verschiedene state callbacks haben:
+         * - fulfilled, in javascript bekannt als .resolved();
+         * - rejected, in javascript bekannt als .reject();
+         * - pending, also wartend.
+         */
+
+        // wir erstellen eine funktion, die eine zeit wartet und dann ein callback ausführt:
+        function warteEtwas(time)
+        {
+            // eine neue promise erstellen wir mit new Promise();
+            return new Promise((resolve, reject) =>
+            {
+                setTimeout(() =>
+                {
+                    const testString = "Hallo welt";
+
+                    resolve(testString);
+                    reject(new Error("Ein fehler ist aufgetreten"));
+                }, time);
+            });
+        }
+
+        // Wir führen die funktion aus, und übergeben wartezeit:
+        warteEtwas(10000).then(
+            (result) => // Wir übergeben die daten des resolve states
+            {
+                console.log(result);
+            },
+            (error) => // Wir übergeben die daten des reject states
+            {
+                console.log(error);
+            }
+        );
+
+        // Es wird empfohlen bei jedem promise chain, am ende ein .catch(); zu setzen, damit das programm den fehler auffangen kann und weiter laufen kann.
+        warteEtwas(3000)
+            .then((result) =>
+            {
+                console.log(result);
+            })
+            .catch((message) =>
+            {
+                console.log(message);
+            });
+
+        /*
+            // Callback hell:
+            firstRequest(function(response)
+            {  
+                secondRequest(response, function(nextResponse)
+                {    
+                    thirdRequest(nextResponse, function(finalResponse)
+                    {     
+                        console.log('Final response: ' + finalResponse);    
+                    }, failureCallback);  
+                }, failureCallback);
+            }, failureCallback);
+
+            // Promise .then();
+
+            firstRequest()
+            .then(function(response)
+            {
+                return secondRequest(response);
+            })
+            .then(function(nextResponse)
+            {  
+                return thirdRequest(nextResponse);
+            })
+            .then(function(finalResponse)
+            {  
+                console.log('Final response: ' + finalResponse);
+            })
+            .catch(failureCallback);
+        */
+
+        // um eine reihe von promises zu erfüllen gibt es .all();, diese methode wartet bis alle promises gelöst wurden, oder eine abgelehnt wurde.
+        // mit .resolve(); können wir auch selbst ein ergebnis erzwingen und etwas zurückgeben.
+        
+        /**
+         * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
+         */
+        const promise1 = Promise.resolve(15);
+        const promise2 = Promise.resolve(true);
+        const promise3 = new Promise((resolve, reject) =>
+        {
+            setTimeout(() => {
+                resolve("Auf mich wird gewartet");
+            }, 1000);
+        });
+
+        Promise.all([promise1, promise2, promise3]).then(result =>
+        {
+            console.log(result);
+        })
+
+    </script>
+</body>
+</html>

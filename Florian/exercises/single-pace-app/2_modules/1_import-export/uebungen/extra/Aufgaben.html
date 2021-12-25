@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="section" id="intro">
+      <h2>Intro</h2>
+      <p>
+        Before we dive in, it should be noted that there are multiple ways of
+        implementing modules depending on the runtime environment in which your
+        code is executed.
+      </p>
+      <p>
+        In JavaScript, there are two runtime environments and each has a
+        preferred module implementation:
+      </p>
+      <ul>
+        <li>
+          The Node runtime environment and the module.exports and require()
+          syntax.
+        </li>
+        <li>
+          The browser’s runtime environment and the ES6 import/export syntax.
+        </li>
+      </ul>
+    </div>
+    <br />
+    <div class="section" id="Node">
+      <h2>Node Runtime Environment: module.exports and require()</h2>
+      <h3>Challenge 1: import/export</h3>
+      <ul>
+        <li>Task 1: Go into the Node/shape-area.js and complete the task</li>
+        <li>Task 2: Go into the Node/app.js and complete the task</li>
+      </ul>
+      <br>
+      <p>Add the line <strong>"type": "module"</strong> to your package.json, directly under "main": "index.js",</p>
+      <br>
+      <h3>Challenge 2: Renaming Imports to Avoid Naming Collisions</h3>
+      <ul>
+        <li>
+          Task 1: Consider the following functions being exported from the
+          modules Node/square-area.js and Node/circle-area.js
+        </li>
+        <li>
+          Task 2: Go into the Node/area-calculator.js and complete the task
+        </li>
+      </ul>
+    </div>
+    <br />
+    <div class="section" id="Browser">
+      <h2>Browser’s runtime environment: ES6 import/export syntax</h2>
+      <h3>Challenge 3</h3>
+      <ul>
+        <li>Task 1: Go into the Browser/module.js and complete the task</li>
+        <li>Task 2: Go into the Browser/main.js and complete the task</li>
+      </ul>
+    </div>
+    <br />
+    <div class="section" id="outro">
+      <h2>Learnings</h2>
+      <ul>
+        <li>
+          How to use the Node.js module.exports object to export code from a
+          file - meaning its functions and/or data can be used by other
+          files/modules.
+        </li>
+        <li>
+          How to use the Node.js require() function to import the functions
+          and/or data from another module.
+        </li>
+        <li>
+          How to use object destructuring to only import the desired components
+          of a module.
+        </li>
+        <li>
+          How to rename imported resources using the
+          <strong>as</strong> keyword.
+        </li>
+        <li>
+          How to use the ES6 export statement to export code from a file -
+          meaning its functions and/or data can be used by other files/modules.
+        </li>
+        <li>
+          How to use the ES6 import statement to import functions and/or data
+          from another module.
+        </li>
+        <li>How to export and import a default value.</li>
+      </ul>
+    </div>
+  </body>
+</html>
