@@ -1,0 +1,9 @@
+<h1>CSRF - Protected Form</h1>
+
+<form action="/users" method="PUT">
+  <input type="text" name="_csrf" value="{{csrfToken}}">
+
+  name: <input type="text" name="email" value="name">
+  password: <input type="password" name="password">
+  <button type="submit">Submit</button>
+</form>

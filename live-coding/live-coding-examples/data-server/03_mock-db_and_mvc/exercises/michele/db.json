@@ -1,0 +1,20 @@
+{
+  "orders": [
+    {
+      "id": 1,
+      "dish": "Salad"
+    },
+    {
+      "id": 2,
+      "dish": "Risotto"
+    },
+    {
+      "id": 3,
+      "dish": "Risotto"
+    },
+    {
+      "id": 4,
+      "dish": "Ice cream"
+    }
+  ]
+}

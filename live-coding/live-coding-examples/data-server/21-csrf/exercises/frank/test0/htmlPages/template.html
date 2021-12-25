@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Greenberrys</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  </head>
+  <style>
+    body{
+      box-sizing: border-box;
+		  background-color: #495056;
+     	color: lightgray;
+     	font-family: Verdana, Geneva, Tahoma, sans-serif;
+      margin-top: 4.3rem;
+    }
+    #logo{
+      height: 2.5rem;
+      width: auto;
+      margin: 10px;
+    }
+    header{
+        position: fixed; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #495056;
+    }
+    .head{
+        display: flex;
+        width: 100%;
+        height:  2rem;
+        align-items: center;
+        margin-top: 10px;
+    }
+    a, a:visited{
+        color: lightgray;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    #lcol{
+      text-align: right;
+      align-self:flex-end;
+      flex-grow: 1;
+      margin-right: 10px;
+    }
+    ul#files {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  ul#files li {
+    float: left;
+    width: 30%;
+    line-height: 25px;
+    margin: 1px;
+    list-style-type: none;
+    color: lightgray;
+  }
+  ul#files li a {
+    display: block;
+    height: 25px;
+    border: 1px solid transparent;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    white-space: nowrap;
+    color: lightgray;
+  }
+  #files .icon-image .name {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBT…Tib0ZdV+QtE41I42geXt1Ze3dlMNZFdw6Ut6CIvKBhkjiM79Pyq1YUmtkKAAAAAElFTkSuQmCC);
+  }
+  #files .icon .name {
+    text-indent: 28px;
+  }
+  #files .name {
+    background-repeat: no-repeat;
+  }
+  #files span {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-indent: 10px;
+  }
+  .view-tiles .name {
+    width: 100%;
+    background-position: 8px 5px;
+  }
+  </style>
+  <body>
+	<header>
+        <div class="head">        
+           <div><img src="/pic/RaspberryLogo.svg" alt="Greenberrys" id="logo"></div> 
+           <div><h1><a href="/" target="_self">Greenberrys</a> </h1></div>
+           <div id="lcol"><a href="/logout" target="_self">Logout</a></div>
+        </div>
+        <hr>
+	</header>
+
+<div>{directory}</div>
+<div>{files}</div>
+
+</body>
+</html>

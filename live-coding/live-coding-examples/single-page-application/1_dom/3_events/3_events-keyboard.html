@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Keyboard</h2>
+
+    <section>
+        <h3>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeydown">
+                document.onkeydown;
+            </a>
+        </h3>
+
+        <p>
+            DIeses event wird abgefeuert wenn der benutzer eine taste auf der tastatur runterdrückt.
+        </p>
+
+        <i>ausnahmen: ALT, SHIFT und STRG (bei einigen browsern und systemem)</i>
+
+        <ul>
+            <li><code>document.addEventListener('keydown', (event) => {});</code></li>
+            <li><code>document.onkeydown = (event) => {};</code></li>
+        </ul>
+
+        <p>
+            Wir haben gerade folgende taste gedrückt:
+            <span id="onkeydownElement" style="color: tomato; font-size: 32px"></span>
+        </p>
+
+        <script>
+            const outputKeyDown = document.getElementById("onkeydownElement");
+
+            document.onkeydown = (event) =>
+            {
+                let key = event.key;
+                console.log(event.key, event.keyCode); // gibt den key aus, oder die ascii nummer.
+                // achtung, space ist " ", und damit unsichtbar, deswegen müsstet ihr das gegenprüfen.
+                if(event.key === " ")
+                {
+                    key = "space";
+                }
+
+                // Mit event.key bekommen wir die aktuell gedrückte taste
+                outputKeyDown.innerText = key;
+            }
+        </script>
+    </section>
+
+    <section>
+        <h3>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup">
+                document.onkeyup;
+            </a>
+        </h3>
+
+        <p>
+            Dieses event wird abgefeuert, wenn eine taste losgelassen wird.
+        </p>
+
+        <ul>
+            <li><code>document.addEventListener('keyup', (event) => {});</code></li>
+            <li><code>document.onkeyup = (event) => {};</code></li>
+        </ul>
+
+        <p>
+            Wir haben folgende taste losgelassen:
+            <span id="onkeyupElement" style="color: tomato; font-size: 32px;"></span>
+        </p>
+
+        <script>
+            const onkeyupOutput = document.getElementById("onkeyupElement");
+
+            document.onkeyup = (event) =>
+            {
+                let key = event.key
+
+                if(event.key === " ")
+                {
+                    key = "space";
+                }
+
+                onkeyupOutput.innerText = key; // die taste, die wir gerade losgelassen haben, soll in unserer span angezeigt werden.
+            }
+        </script>
+    </section>
+
+    <section>
+        <h3>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeypress">
+                document.onkeypress;
+            </a>
+        </h3>
+
+        <i>Diese methode ist dabei DEPRECATED (also nicht mehr unterstützt) zu werden.</i>
+
+        <p>
+            Dieses event wird abgefeuert wenn gerade eine taste heruntergedrückt wird.
+        </p>
+
+        <ul>
+            <li><code>document.addEventListener('keypress', (event) => {});</code></li>
+            <li><code>document.onkeypress = (event) => {};</code></li>
+        </ul>
+
+        <p>
+            Wir drücken gerade folgende taste:
+            <span id="onkeypressElement" style="color: tomato; font-size: 32px"></span>
+        </p>
+
+        <script>
+            const outputPressElement = document.getElementById("onkeypressElement");
+
+            document.onkeypress = (event) =>
+            {
+                let key = event.key;
+
+                if(event.key === " ")
+                {
+                    key = "space";
+                }
+
+                outputPressElement.innerText = key
+            }
+        </script>
+    </section>
+    
+</body>
+</html>

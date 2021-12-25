@@ -1,0 +1,13 @@
+{
+  "alice": {
+    "name": "alice",
+    "salt": 0.17959513778121772,
+    "sha256Salted": "7cf691752053812f90bc3ea6ab438746a5bd3b0ceb8295dbb42ced8624cf1fb0"
+  },
+  "bob": {
+    "name": "bob",
+    "salt": 0.39299799929525037,
+    "sha256Salted": "d802d53fcfb55d0f509d18f396fef6d49970edf7fce12f5ce9a09ed35311ba88"
+  }
+  
+}

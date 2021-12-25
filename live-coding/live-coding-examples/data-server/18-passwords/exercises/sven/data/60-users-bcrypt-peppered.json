@@ -1,0 +1,10 @@
+{
+  "alice": {
+    "name": "alice",
+    "bcryptPeppered": "$2b$12$3Iw/lErJZtlP6ctTkQMHzu8nv8egFIcjeLiyk/bkMNp0eI9TRkLwO"
+  },
+  "bob": {
+    "name": "bob",
+    "bcryptPeppered": "$2b$12$jyF6qj73onmWmT6LsYvUq.rN76SHwSZYPVNEGJcTXX/CVOPX205da"
+  }
+}

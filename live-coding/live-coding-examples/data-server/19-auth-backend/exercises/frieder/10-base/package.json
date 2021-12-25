@@ -1,0 +1,29 @@
+{
+  "name": "magazine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "yarn start && yarn seed && nodemon server.js",
+    "start": "docker-compose up -d mongo && sleep 2 && docker-compose up -d mongo-express && docker-compose ps && echo \"*** Run 'yarn stop' or 'yarn down' once you are done ***\"",
+    "stop": "docker-compose stop",
+    "down": "docker-compose down",
+    "seed": "node seed.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ajv": "^8.6.2",
+    "ajv-formats": "^2.1.0",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.5"
+  },
+  "devDependencies": {
+    "faker": "^5.5.3",
+    "nodemon": "^2.0.12"
+  }
+}

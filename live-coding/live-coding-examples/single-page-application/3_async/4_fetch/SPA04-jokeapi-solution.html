@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style-type: none;
+        }
+        select{
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JokeApi</h1>
+    <p>Please only number between 1 and 10</p>
+    <input type="number" id="howoften">
+    <select name="category" id="category" multiple="multiple">
+        <option value="programming">programming</option>
+        <option value="misc">misc</option>
+        <option value="dark">dark</option>
+        <option value="pun">pun</option>
+        <option value="spooky">spooky</option>
+        <option value="christmas">christmas</option>
+    </select>
+    <button id="buttonone">Get some data</button>
+    <ul id="ul-data">
+
+    </ul>
+    <script>
+        let buttonForData = document.getElementById("buttonone");
+        let dataList = document.getElementById("ul-data");
+
+        async function getData(){
+            let howOften = document.getElementById("howoften").value;
+            let category = document.getElementById("category").selectedOptions;
+            let categoryArray = [];
+            if (category.length == 0){
+                alert("Please input a category")
+            } else{
+                for (let i = 0; i < category.length; i++) {
+                    categoryArray.push(category[i].label);
+                }
+            }
+            let randomIndex = Math.floor(Math.random() * categoryArray.length)
+            category = categoryArray[randomIndex];
+            //category = categoryArray.join();
+            if (howOften == ""|| howOften >10){
+                alert("Please input a valid number")
+            } else {
+                for (let i = 0; i < howOften; i++) {
+                    const res = await fetch("https://v2.jokeapi.dev/joke/" + category);
+                    const data = await res.json();
+                    displayData(data);     
+                }   
+                // ALTERNATIVE
+                // const res = await fetch("https://v2.jokeapi.dev/joke/"+category +"?amount="+ howOften 
+                // const data = await res.json();
+                // displayData(data);    
+            }     
+        }
+
+        function displayData(data){
+            // ALTERNATIV
+            // data.jokes.map((joke)=>{
+            //     joke.setup || joke.delivery || joke.joke
+            // })
+            let li1 = document.createElement("li");
+            let li2 = document.createElement("li");
+            if(data.joke === undefined){ // Bedeutet: Frage Antwort
+                li1.innerText = "Frage: " + data.setup;
+                li2.innerText = "Antwort: " + data.delivery;
+            } else{                      // Wir haben NUR Joke
+                li1.innerText = "Witz: " + data.joke;
+                li2.innerText = ""
+            }
+            let li3 = document.createElement("li")
+            li3.innerText = data.category;
+            let hr = document.createElement("hr")
+            dataList.appendChild(li3);
+            dataList.appendChild(li1);
+            dataList.appendChild(li2);
+            dataList.appendChild(hr);
+        }
+
+        buttonForData.addEventListener("click", getData);
+    </script>
+</body>
+</html>
+
+<!-- 
+https://v2.jokeapi.dev:443/joke/dark/bild.png?lang=de
+PROTOCOL:
+https, http, ftp, ssh
+SUBDOMAIN:
+v2, shop, azure
+DOMAIN:
+jokeapi, amazon, facebook, microsoft
+TOP LEVEL DOMAIN:
+dev, de, com , info, berlin
+PORT (:)
+443, 80, 21, 22
+DIRECTORY (/)
+/joke/dark, /kontakt
+PARAMETER (?)
+key:value, lang=de, pwd=24hkl23jk234
+-->

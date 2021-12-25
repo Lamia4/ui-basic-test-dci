@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" /> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="shortcut icon" href="favicon.png"> -->
+  <title>Globeat</title>
+  <style>
+
+    html, body{
+      background: red;
+      font-family: 'Barlow', sans-serif;
+    }
+
+    h1, h2, h3, h4, h5, h6{
+      font-family: 'DM Sans', sans-serif;
+    }
+    
+    .display-4{
+      padding-bottom: 55px;
+      margin-bottom: 2px;
+    }
+
+    .navbar-brand > img {
+      margin-left: -50px;
+    } 
+
+    section{
+        background: #FFE7D1;
+        min-height: 20vh;
+    }
+
+    .card:hover{
+      background-color: grey;
+      
+    }
+    
+    .collapse>ul>li{
+      text-shadow: 2px 2px 2px black;
+      font-size: 20px;
+    }
+    
+    .coloRin{
+      padding-right: 35px;
+      margin-right: 40%;
+      color: rgb(87, 124, 24);
+      text-shadow: 1px 1px 1px black;
+    }
+    
+    .textDown{
+      display: flex;
+      align-items:flex-end;
+      width: 100%;
+      line-height: 100%;
+      padding-top: 2vh;
+      justify-content: space-between;
+    }
+    .navbar-toggler{
+      color: #FF4D7C;
+    }
+    .textDown > button {
+      align-items: flex-end;
+      justify-content: right;
+      margin-bottom: 10px;
+    }
+
+    .pushLine{
+      font-size: 20px;
+      padding-top: 20px;
+      height: auto;
+      line-height: 100%;
+      text-align: center;
+    }
+
+    .navbar-nav>li{
+      display: flex;
+      align-self: flex-end;
+    }
+
+    .join-button{
+      display: flex;
+      margin-right: 4px;
+    }
+    
+    .backgroundImage{
+      background-image: url(...);
+      background-repeat: no-repeat;
+      background-position-y: 85%;
+      background-size: cover;
+      position: relative; 
+      background-color: #FF4D7C; 
+    }
+    
+    .backgroundImage-blur::before{
+      content: '';
+      display: block;
+      background: inherit;
+      position: absolute;
+      width: 100%; height: 100%;
+      left: 0; top: 0;
+      filter: blur(15px);
+      transform: scale(1.2,1.4);
+    }
+        
+    .video{
+      width: auto;
+      min-height: auto;
+    }
+    
+    #container1{
+      text-align: center;
+      line-height: 20vw;
+      background-color: #FFE7D1;
+      min-height: 20vw;
+    }
+
+    #container2{
+      background-color: #6AC672;
+      /* min-height: 20vw; */
+    }
+
+    #container3{
+      background-color: #143A14;
+      color: whitesmoke;
+    }
+
+    #container4{
+      background-color:#FFE564;
+      min-height: 30vh;
+     
+    }
+
+    .p-container3{
+      /* margin-top: 30px; */
+      margin-left:  10px;
+      text-align: center;
+      font-size: larger;
+    }
+    html, body {margin: 0; padding: 0;} p {margin: 0px 0px 0px 0px; padding: 0 0 3px 0;} h1, h2, h3, h4, h5, h6 {margin: 0 0 2px 0; padding: 0;} form {margin 0; padding: 0;}
+
+    </style>
+</head>
+<body>
+  <div>
+  <section id="container bg-success d-flex">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+      <div class="container-fluid bg-transparent">
+        <a class="navbar-brand d-flex justify-content-end justify-item-end" href="index.html"><img src="./assets/images/Logo-pink-transparency.png" alt="globeat-logo" height="80px" width="auto"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end justify-item-end bg-transparent" id="navbarSupportedContent">
+          <ul class="navbar-nav me-0 mb-2 mb-lg-0">
+            <!-- -------------------------- Thema 1 ------------------------ -->
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#container1">Opc1</a>
+            </li>
+              <!-- -------------------------- Thema 2 ------------------------ -->
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#container2">Opc2</a>
+            </li>
+               <!-- -------------------------- Thema 3 ------------------------ -->
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#productsCards">Opc3</a>
+            </li>
+              <!-- -------------------------- Dropdown toggle ------------------------ -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-light" data-toggle="dropdown" href="#">Opc4</a>
+              <div class="dropdown-menu bg-success">
+                <a class="dropdown-item text-light" href="#">Opc4.2</a>
+                <a class="dropdown-item text-light" href="#">Opc4.3</a>
+                <a class="dropdown-item text-light" href="#">Opc4.4</a>
+                <a class="dropdown-item text-light" href="#">Opc4.5</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
+    <div class="jumbotron bg-dark text-light backgroundImage">
+      <h1 class="display-4 text-dark">Globeat</h1>
+      <!-- <hr class="my-4 text-light"> -->
+      <div class= "textDown">
+        <p class="text-light ml -2 pushLine">March Sprint</p>
+        <a class = "joinUs dark" href="registrationform/registrationForm.html"><button class="btn btn-success btn-lg justify-item-end join-button" role="button">Join Us</button></a>
+      </div>
+    </div>
+  </section>
+  <!-- ----------- Container 1-----------  -->
+  <section id="container1" class="col-md-12 mx-auto">
+    <h3>Text</h3>
+    <p>Description</p>
+  </section>
+  <!-- ----------- Container 2-----------  -->
+  <div id="container2" class="col-md-12 mx-auto">
+    <h3 class="text-center">Title</h3>
+    <p class="text-right">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque eaque consequuntur quisquam laborum tempore, eum voluptas provident adipisci consequatur iste blanditiis dolorem minima dignissimos ratione ut distinctio ad molestias? Cupiditate? 
+    </p> 
+  </div>
+
+  <!-- ----------- Product cards-----------  -->
+<section id="productsCards"  class = "row gy-1 gx-1 bg-muted ml-2 mr-2 d-flex flex-direction-row justify-content-center bg-light">
+    <!-- card1 -->
+  <div class="card border-primary m-3 col-md-5" style="max-width: 20rem;">
+    <div class="card-header">Product 1</div>
+    <div class="card-body text-primary">
+        <img class="card-img-top" src="" alt="Card image cap">
+        <h5 class="card-title mt-3">Title Product</h5>
+        <p class="card-text text-dark">Description</p>
+    </div>
+  </div>
+  <!-- card 2 -->
+  <div class="card border-success m-3 col-md-5" style="max-width: 20rem;">
+    <div class="card-header">Product 2</div>
+    <div class="card-body text-success">
+        <img class="card-img-top" src="images/bogota.JPG" alt="Card image cap">
+        <h5 class="card-title mt-3">Title Product</h5>
+        <p class="card-text text-dark">Description</p>
+    </div>
+  </div>
+  <!-- card 3 -->
+  <div class="card border-danger m-3 col-md-5" style="max-width: 20rem;">
+    <div class="card-header">Product 3</div>
+    <div class="card-body text-danger">
+        <img class="card-img-top" src="images/amazonas.JPG" alt="Card image cap">
+        <h5 class="card-title mt-3">Title Product</h5>
+        <p class="card-text text-dark">Description</p>
+    </div>
+  </div>
+  <!-- card 4 -->
+  <div class="card border-warning m-3 col-md-5" style="max-width: 20rem;">
+    <div class="card-header">Product 4</div>
+    <div class="card-body text-warning">
+        <img class="card-img-top" src="images/pablo`sHome.JPG" alt="Card image cap">
+        <h5 class="card-title mt-3">Title Product</h5>
+        <p class="card-text text-dark">Description</p>
+    </div>
+  </div>
+  <!-- card 5 -->
+  <div class="card border-info m-0 col-md-6" style="max-width: 20rem;">
+    <div class="card-header">Product 5</div>
+    <div class="card-body text-info">
+        <img class="card-img-top" src="images/pacifico.JPG" alt="Card image cap">
+        <h5 class="card-title mt-3">Title Product</h5>
+        <p class="card-text text-dark">Description</p>
+    </div>
+  </div>
+</section>
+  <!-- ----------- Container 3-----------  -->
+  <div id="container3" class="row mb-0 gy-1 gx-1 bg-muted ml-2 mr-2">
+    <div class="col col-12 col-sm-12 col-md-12 col-lg-5">
+      <h3 class="mt-1 text-center text-uppercase"><strong>Headline</strong></h3>
+      <br>
+      <p class = "p-container3">Text 
+      <br><br>
+      More Text
+      <br><br> one more time <strong>Important</strong> continue <a href="https://www.youtube.com/watch?v=FJ3NZAPjbsk">link.</a> 
+      </p>
+    </div>
+    <div class="col col-12 col-sm-12 col-md-12 col-lg-7">
+      <iframe width="100%" height="90%" src="https://www.youtube.com/embed/iixDAXGcIg8?vq=highres"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+      <!-- ----------- Video -----------  -->
+    <!-- <section class="video"></section> -->
+
+    <!-- ----------- Container 4-----------  -->
+    <div id="container4" class="col-md-12 mx-auto">
+      <h3 class="text-center">Title</h3>
+      <p class="text-left">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque eaque consequuntur quisquam laborum tempore, eum voluptas provident adipisci consequatur iste blanditiis dolorem minima dignissimos ratione ut distinctio ad molestias? Cupiditate? 
+      </p> 
+    </div>
+      <!-- -------------footer----------------- -->
+    <footer class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top justify-content-center d-row">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="#">Kontakt</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About Us</a>
+        </li>
+      </ul>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+  </div>
+</div>
+</body>
+</html>

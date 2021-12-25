@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center mt-4">My Favorite Destinations</h1>
+
+        <section>
+            <div class="alert alert-primary">
+                Toggle the list of my favorite Destinations
+            </div>
+
+            <ul class="list-group">
+                <li class="list-group-item active">Rome</li>
+                <li class="list-group-item">Athens</li>
+                <li class="list-group-item">Bangkok</li>
+                <li class="list-group-item">Amsterdam</li>
+                <li class="list-group-item">Cala Gonone</li>
+            </ul>
+
+            <button class="btn btn-primary float-right mt-4">Hide Destinations</button>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="message"></div>
+        </section>
+    </div>
+
+    <script>
+        const button = document.querySelector("button");
+        const list = document.querySelector("ul");
+        const listItems = document.querySelectorAll("li");
+        const messageElement = document.querySelector(".message");
+
+        button.addEventListener("click", toggleItems);
+
+        function toggleItems(event)
+        {
+            // wir fügen die klasse "d-none" hinzu, oder löschen sie.
+                        // in css: display: none;
+            list.classList.toggle("d-none");
+            console.log(list.classList);
+
+            // Beinhaltet das element der list die klasse "d-none" ?
+            button.innerText = list.classList.contains('d-none') ? "Show destinations" : "Hide destinations";
+
+            // Chris Coyiers Array.contains, zum vergleich:
+            /*
+            Array.prototype.contains = function ( needle ) {
+                for (i in this) {
+                    if (this[i] == needle) return true;
+                }
+                return false;
+            }
+            */
+        }
+
+        // BONUS:
+        listItems.forEach(item =>
+        {
+            item.addEventListener("click", selectItem);
+        });
+
+        function selectItem(event)
+        {
+            // Wir holen uns das aktuell selktierte element...
+            const selectedItem = document.querySelector('.active');
+            // ... und entziehen ihm die klasse "active".
+            selectedItem.classList.remove('active');
+            // Wir fügen dem aktuellen element die klasse "active" hinzu.
+            event.target.classList.add('active');
+            // Wir geben das aktuelle element in der konsole aus.
+            console.log(event.target);
+
+            // Wir erstellen ein neues element für die nachricht
+            const newMessage = document.createElement("div");
+            // Wir fügen den neuen element die klassen "alert", "alert-success" und "mt-4" hinzu
+            newMessage.classList.add('alert', 'alert-success', 'mt-4');
+            // Wir erstellen einen text der den text des aktuell angeklickten elementes beinhaltet
+            newMessage.innerText = "You selected " + event.target.innerText;
+            
+            // wir löschen den aktuellen inhalt von "message"...
+            messageElement.innerHTML = "";
+            // ... und fügen das neue element ein.
+            messageElement.append(newMessage);
+            
+            // alternative: messageElement.innerHTML = '<div class="alert alert-success mt-4">You selected ' + event.target.innerText + '</div>';
+        }
+    </script>
+    
+</body>
+</html>

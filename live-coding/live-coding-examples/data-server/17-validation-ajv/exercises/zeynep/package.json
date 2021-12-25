@@ -1,0 +1,18 @@
+{
+  "name": "zeynep",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ajv": "^8.6.2",
+    "ajv-errors": "^3.0.0",
+    "ajv-formats": "^2.1.0"
+  }
+}

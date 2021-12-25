@@ -1,0 +1,10 @@
+{
+  "alice": {
+    "name": "alice",
+    "bcrypt": "$2b$12$pvpOcgezya3jLFfg5EYUZ.vfbjlddloPumuka0BWw0ChYmUaQNKIa"
+  },
+  "bob": {
+    "name": "bob",
+    "bcrypt": "$2b$12$iAhn1EtUy6Um.xnjP8rxMO2BNxsKRLzeJN0GpwfFZDwtRxxuOFe.2"
+  }
+}

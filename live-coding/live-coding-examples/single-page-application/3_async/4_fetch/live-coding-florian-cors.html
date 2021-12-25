@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <br>
+    <button id="button-one">Get some Data!</button>
+    <br>
+    <ul id="data-ul">
+
+    </ul>
+    <script>
+        let buttonOne = document.getElementById("button-one");
+        buttonOne.addEventListener("click", getData);
+
+        async function getData(){
+            const proxyUrl = "https://cors-anywhere.herokuapp.com/"
+            const realUrl = "https://joke-api-strict-cors.appspot.com/jokes/random"
+            // Im Fetch zuerst die Proxy verwenden
+            const response = await fetch(proxyUrl+realUrl)
+            const data = await response.json();
+            displayData(data);
+        }
+        function displayData(data){
+            let ul = document.getElementById("data-ul");
+            li = document.createElement("li");
+            li.innerText = "Questions: " + data.setup;
+            li2 = document.createElement("li");
+            li2.innerText = "Answer: " + data.punchline;
+            ul.appendChild(li);
+            ul.appendChild(li2);
+        }
+        // CRUD Application = Create Read Update Delete
+        // mit dazugehörigen HTTP Methoden:
+        //
+        // Create Read Update Delete
+        // POST   GET  PUT    Delete
+        // 
+    </script>
+</body>
+</html>

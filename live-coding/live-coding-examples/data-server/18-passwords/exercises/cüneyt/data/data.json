@@ -1,0 +1,10 @@
+{
+    "alice": {
+        "name": "Alice Schwarzer",
+        "pass": "abc"
+    },
+    "bob": {
+        "name": "Bob Heldorf",
+        "pass": "123"
+    }
+}

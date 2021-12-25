@@ -1,0 +1,9 @@
+.gitignore
+.env.local
+docker-compose.yml
+TODO.md
+
+_curl
+_documentation
+node_modules
+

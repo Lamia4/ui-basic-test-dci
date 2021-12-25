@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-with, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>CSRF Test</title>
+</head>
+<body>
+    <div data-uri="http://localhost:3345/users/" data-method="post" data-body='{"testKey": "testValue"}'></div><br>
+    <div data-uri="http://localhost:3345/users/" data-method="get" data-body='{"testKey": "testValue"}'></div><br>
+    <div data-uri="http://localhost:3345/users/274f5a8c9b6e274f5a8c9b6e" data-method="put" data-body='{"testKey": "testValue"}'></div><br>
+    <div data-uri="http://localhost:3345/users/274f5a8c9b6e274f5a8c9b6e" data-method="delete" data-body='{"testKey": "testValue"}'></div><br>
+
+    <script>
+        document.querySelectorAll('div').forEach(div =>
+            {
+                div.innerText = div.dataset.method + ': ' + div.dataset.uri;
+                div.onclick = async (e) => {
+                    
+                    const options = {
+                        method: div.dataset.method,
+                        headers: { 'Content-Type': 'application/json;charset=UTF-8' },
+                        mode: 'cors',
+                        [div.dataset.method.toUpperCase() !== 'GET' ? 'body' : null] : div.dataset.method.toUpperCase() !== 'GET' ? div.dataset.body : null
+                    };
+                    try {
+                        const result = await fetch(div.dataset.uri, options);
+                    } catch (e) {
+                        console.log(e);
+                    }
+                };
+            }
+        );
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Events Delegation</h1>
+
+    <p>
+        Event-Delegation, ist eine technik um events in unseren web apps zu behandeln. Delegation wird möglich weil JavaScript events "bubblen" kann, also über mehrere elemente im DOM-baum ausbreiten kann. Tatsächlich basiert event-delegation auf dem konzept von event-bubbling, weswegen event-delegation immer dann möglich ist, wenn event-bubbling auch möglich ist. 
+    </p>
+
+    <p>
+        Wenn wir event listener benutzen, und wir wissen das bubbling möglich ist, können wir uns so einige event listener sparen, und unseren code effizienter machen.
+    </p>
+
+    <p>
+        Meist haben unsere applikation eine menge zu handlen, klick events, key events, mouse events und einige andere events, umso größer unsere applikation wird, umso mehr events benötigen wir für wieder und wieder die selben sachen, was irgendwann zu performance problemen führen ... wird.
+    </p>
+
+    <b>Beispiel:</b>
+    <ul id="categoryList">
+        <li class="categoryItem" id="category1">Kategorie 1</li>
+        <li class="categoryItem" id="category2">Kategorie 2</li>
+        <li class="categoryItem" id="category3">Kategorie 3</li>
+    </ul>
+
+    <script>
+        // für jede dieser kategorien erstellen wir einen event listener
+        const categoryElement1 = document.querySelector("#category1");
+        const categoryElement2 = document.querySelector("#category2");
+        const categoryElement3 = document.querySelector("#category3");
+
+        categoryElement1.onclick = (event) => {
+            console.log("Kategorie 1");
+        }
+
+        categoryElement2.onclick = (event) =>
+        {
+            console.log("Kategorie 2");
+        }
+
+        categoryElement3.onclick = (event) =>
+        {
+            console.log("Kategorie 3");
+        }
+    </script>
+
+    <p>
+        könnten wir das problem vielleicht mit weniger code lösen, anstelle von mehr code?
+        ja.
+    </p>
+
+    <p>
+        Event-delegation ist, anstelle das man jedem element und dessen kindes kindern manuell einen einen event-listener zuweißt, das event dem elternelement hinzuzufügen. Was ändert sich dadurch? Das kindelement wird durch event-bubbling den event-listener im parent-element nutzen.
+    </p>
+
+    <b>Wie vorher, erstellen wir zum test eine liste</b>
+
+    <ul id="userList">
+        <li id="user1">Max</li>
+        <li id="user2">James</li>
+        <li id="user3">Henry</li>
+        <li id="user4">Michael</li>
+        <li id="user5">George</li>
+    </ul>
+
+    <script>
+        // Wir holen uns das listen-element...
+        const userListElement = document.querySelector("#userList");
+
+        // .. und fügen ihm einen eventListener hinzu:
+        userListElement.addEventListener('click', (event) =>
+        {
+            // Wenn wir jetzt event.target benutzen...
+            console.log(event.target.id);
+            // bekommen wir die id des kind-elementes zurück.
+        });
+    </script>
+
+    <p>Auf diese weise können wir viel code sparen, und entlasten auch die performance unserer applikation.</p>
+
+</body>
+</html>
