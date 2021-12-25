@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="container">
+
+        <ul class="list"></ul>
+
+    </div>
+
+    <script>
+        const containerElement = document.querySelector("#container");
+        const listElement = document.querySelector(".list");
+
+        const headerElement = document.createElement("h1"); 
+        headerElement.innerText = "Überschrift"; 
+
+        containerElement.prepend(headerElement); 
+
+        const footerElement =document.createElement("footer"); 
+        footerElement.innerHTML = "<h4>Hier ist der footer</h4>" 
+
+        containerElement.append(footerElement);
+        const listEntries =
+        [
+            "Erster",
+            "Zweiter",
+            "Dritter"
+        ];
+
+        for(entry of listEntries)
+        {
+            const listEntry = document.createElement("li"); 
+            listEntry.innerText = entry; 
+            listElement.append(listEntry); 
+        };
+
+
+        const listLength = listElement.childElementCount;
+
+    </script>
+    
+</body>
+</html>
