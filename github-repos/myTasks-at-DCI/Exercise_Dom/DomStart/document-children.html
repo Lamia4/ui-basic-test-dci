@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="beispiel">Hallo Welt</p>
+    <footer> Hier ist eine footer</footer>
+    <script>
+        const beispielElement = document.getElementById("beispiel");
+        const footerElement = document.querySelector("footer");
+  
+    const beforeElement = document.createElement("p"); 
+    beforeElement.innerText = "Dieses Element befindet sich über unserem Beispiel Element"
+    beispielElement.before(beforeElement);
+
+    const afterElement = document.createElement("p");
+    afterElement.innerText = "Dieses Element befindet sich unter unserem beispiel-element";
+    beispielElement.after(afterElement);
+
+    console.log(beispielElement);
+    const newElement = document.createElement("h1");
+    newElement.id = "Beispiel";
+    newElement.innerText = "Dies hier ersetzt unser aktuelles Element"; 
+
+    beispielElement.replaceWith(newElement); 
+
+
+    footerElement.remove();
+
+
+
+    </script>
+</body>
+</html>
